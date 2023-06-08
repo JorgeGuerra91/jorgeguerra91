@@ -55,11 +55,19 @@
             </tr>
         </thead>
         <tbody>
-            <?php
-                  while($row=mysqli_fetch_array($query))?><tr><td><?php  echo $row['tarea']?></td><td class="text-end">
-                  <a href="delete_tarea.php?id_tarea=<?php echo $row['id_tarea'] ?>" class="btn btn-outline-danger" title="Eliminar tarea">❌</a></td></tr><?php}
-     ?>  
-     </tfoot>
+        <?php
+                while($row=mysqli_fetch_array($query)){
+                       ?>
+                        <tr>
+                            <td><?php  echo $row['tarea']?></td>
+                                           <td class="text-end">
+                                        <a href="delete_tarea.php?id_tarea=<?php echo $row['id_tarea'] ?>" class="btn btn-outline-danger" title="Eliminar tarea">❌</a>
+                                     </td>
+                                </tr>
+                            <?php 
+                        }
+                    ?>  
+        </tfoot>
     </table></div>
 </div>
 </body>
